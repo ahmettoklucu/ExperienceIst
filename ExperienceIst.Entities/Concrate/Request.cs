@@ -19,7 +19,7 @@ namespace ExperienceIst.Entities.Concrate
         public bool Skin { get; set; }
         public bool Teeth { get; set; }
         public bool PcpOther { get; set; }
-        public string OtherPcbDetail { get; set; }
+        public string OtherPcpDetail { get; set; }
         public bool IstanbulTour { get; set; }
         public bool TraditionalProduct { get; set; }
         public bool TpOther { get; set; }
