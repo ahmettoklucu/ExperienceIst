@@ -14,7 +14,7 @@ namespace ExperienceIst.Entities.Concrate
         public string Surname { get; set; }
         public string PhoneNumber { get; set; }
         public string EMail { get; set; }
-        public int  RoomNumber { get; set; }
+        public int?  RoomNumber { get; set; }
         public bool Hair { get; set; }
         public bool Skin { get; set; }
         public bool Teeth { get; set; }

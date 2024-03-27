@@ -8,13 +8,9 @@ using System.Threading.Tasks;
 
 namespace ExperienceIst.Bussiness.Concrate.ResultModele
 {
-    public class LoginResultModel
+    public class LoginResultModel:ResultModel
     {
         public Token Token { get; set; }
         public User User { get; set; }
-        public bool Success { get; set; }
-        public string Message { get; set; }
-        
-
     }
 }
