@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ExperienceIst.Bussiness.Concrate.RequestModele;
+using ExperienceIst.Bussiness.Concrate.ResultModele;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +10,6 @@ namespace ExperienceIst.Bussiness.Abstract
 {
     public interface IUserService
     {
-
+        LoginResultModel Login(LoginRequestModel loginRequest);
     }
 }

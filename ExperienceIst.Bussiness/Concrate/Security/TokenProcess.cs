@@ -11,7 +11,7 @@ using System.IdentityModel.Tokens.Jwt;
 
 namespace ExperienceIst.Bussiness.Concrate.Security
 {
-    public class TokenProces
+    public class TokenProcess
     {
         public static bool ValidateToken(string token)
         {
