@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace ExperienceIst.Bussiness.Concrate
 {
-    public class RequestManager : IRequestSevice
+    public class RequestManager : IRequestService
     {
         private readonly IRequestDal _requestDal;
         public RequestManager(IRequestDal requestDal)
@@ -21,7 +21,7 @@ namespace ExperienceIst.Bussiness.Concrate
             _requestDal=requestDal;
         }
 
-        ResultModel IRequestSevice.AddRequest(Request request)
+        ResultModel IRequestService.AddRequest(Request request)
         {
 
             ResultModel resultModele = new ResultModel();

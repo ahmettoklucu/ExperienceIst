@@ -10,4 +10,8 @@
     <Content Include="Controllers\HomeController.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ExperienceIst.Bussiness\ExperienceIst.Bussiness.csproj" />
+  </ItemGroup>
+
 </Project>

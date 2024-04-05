@@ -27,24 +27,26 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Emir Bazaar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Make Request</a></li>
+
                 </ul>
             </div>
         </div>
     </nav>
     <!-- Masthead-->
-    <header class="masthead">
+   
+
+    @RenderBody()
+    <div class="masthead" style= "display: flex;
+    justify-content: center;">
         <div class="container">
-            <div class="masthead-subheading">Welcome To Our Studio!</div>
+            <div class="masthead-subheading">Welcome To Emir Bazaar</div>
             <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
             <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
         </div>
-    </header>
-            @RenderBody()
+    </div>
     <footer class="footer py-4">
         <div class="container">
             <div class="row align-items-center">
@@ -60,14 +62,21 @@
                 </div>
             </div>
         </div>
+
+
+
+
     </footer>
     <!-- Bootstrap core JS-->
     <script src="~/template/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="~/template/js/scripts.js"></script>
+    <!-- Core theme JS-->
+    <script src="~/js/scripts.js"></script>
+
+
     <script src="~/template/bootstrap/sb-forms-0.4.1.js"></script>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 </body>
 </html>
-

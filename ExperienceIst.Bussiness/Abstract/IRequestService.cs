@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ExperienceIst.Bussiness.Abstract
 {
-    public interface IRequestSevice
+    public interface IRequestService
     {
         public ResultModel AddRequest(Request request);
     }

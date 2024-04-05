@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace ExperienceIst.Bussiness.Concrate
 {
-    public class UserManager : IUserService
+    public class UserManager :IUserService
     {
         private readonly IUserDal _userDal;
         public UserManager(IUserDal userDal)
