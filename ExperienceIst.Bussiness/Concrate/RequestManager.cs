@@ -21,7 +21,37 @@ namespace ExperienceIst.Bussiness.Concrate
             _requestDal=requestDal;
         }
 
-        ResultModel IRequestService.AddRequest(Request request)
+        public List<Request> GetAllRequest()
+        {
+           return _requestDal.GetAll();
+        }
+        public Request GetRequest(int id)
+        {
+            return _requestDal.Get(p=>p.Id==id);
+        }
+        public ResultModel UpdateRequest(Request request)
+        {
+            ResultModel resultModele = new ResultModel();
+            resultModele.Success = false;
+            resultModele.Message = "";
+            try
+            {
+                ValidationTool.Validate(new RequestValidator(), request);
+                _requestDal.Update(request);
+                resultModele.Message = "Your request is sent. We will be contacting you asp.";
+                resultModele.Success = true;
+            }
+            catch (Exception ex)
+            {
+                resultModele.Message = ex.Message;
+                resultModele.Success = false;
+
+            }
+            return resultModele;
+
+
+        }
+        public ResultModel AddRequest(Request request)
         {
 
             ResultModel resultModele = new ResultModel();
@@ -41,6 +71,11 @@ namespace ExperienceIst.Bussiness.Concrate
 
             }
             return resultModele;
+        }
+
+        public ResultModel DeleteRequest(Request request)
+        {
+            throw new NotImplementedException();
         }
     }
 }

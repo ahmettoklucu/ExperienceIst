@@ -1,6 +1,5 @@
 ﻿using ExperienceIst.Bussiness.Abstract;
 using ExperienceIst.Bussiness.Concrate.RequestModele;
-using ExperienceIst.Bussiness.Concrate.ResultModele;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 

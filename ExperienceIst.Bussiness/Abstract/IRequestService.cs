@@ -11,5 +11,9 @@ namespace ExperienceIst.Bussiness.Abstract
     public interface IRequestService
     {
         public ResultModel AddRequest(Request request);
+        public List<Request> GetAllRequest();
+        public Request GetRequest(int id);
+        public ResultModel UpdateRequest(Request request);
+        public ResultModel DeleteRequest(Request request);
     }
 }

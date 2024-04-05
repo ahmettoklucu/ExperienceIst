@@ -1,5 +1,6 @@
 ﻿using ExperienceIst.Bussiness.Abstract;
 using ExperienceIst.Entities.Concrate;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ExperienceIst.Wep.Controllers
@@ -11,10 +12,12 @@ namespace ExperienceIst.Wep.Controllers
         {
             _requestService = requestService;
         }
+        [AllowAnonymous]
         public IActionResult Index()
         {
             return View();
         }
+        [AllowAnonymous]
         public  JsonResult MakeRequest(Request model)
         {
 

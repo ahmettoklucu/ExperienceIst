@@ -1,5 +1,6 @@
 ﻿using ExperienceIst.Bussiness.Concrate.RequestModele;
 using ExperienceIst.Bussiness.Concrate.ResultModele;
+using ExperienceIst.Entities.Concrate;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,6 @@ namespace ExperienceIst.Bussiness.Abstract
     public interface IUserService
     {
         LoginResultModel Login(LoginRequestModel loginRequest);
+       
     }
 }
