@@ -15,12 +15,103 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="~/template/css/styles.css" rel="stylesheet" />
+    <style>
+        .product-selection {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .product-item {
+            text-align: center;
+        }
+
+            .product-item img {
+                width: 100%;
+                max-height: 150px;
+            }
+
+            .product-item input[type="checkbox"] {
+                display: none;
+            }
+
+            .product-item label {
+                display: block;
+                cursor: pointer;
+                border: 2px solid transparent;
+                transition: border-color 0.3s ease;
+            }
+
+                .product-item label:hover {
+                    border-color: #333;
+                }
+
+        .product-item1 {
+            text-align: center;
+        }
+
+            .product-item1 img {
+                width: 100%;
+                max-height: 75px;
+            }
+
+            .product-item1 input[type="checkbox"] {
+                display: none;
+            }
+
+            .product-item1 label {
+                display: block;
+                cursor: pointer;
+                border: 2px solid transparent;
+                transition: border-color 0.3s ease;
+            }
+
+                .product-item1 label:hover {
+                    border-color: #333;
+                }
+
+        .submit-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            .submit-btn:hover {
+                background-color: #0056b3;
+            }
+        .portfolio-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between; /* Adjust as needed */
+        }
+
+        .portfolio-item {
+            width: calc(100% - 20px); /* Adjust the width based on your design and spacing preferences */
+            margin-bottom: 50px; /* Adjust the margin between items */
+        }
+
+            .portfolio-item img {
+                width: 400%;
+                height: 300px; /* Adjust the height based on your design preferences */
+                object-fit: cover; /* Maintain aspect ratio and cover the container */
+            }
+
+        .logo {
+            transform: scale(4); /* Adjust the scale factor as needed */
+        }
+    </style>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/page/makerequest.js"></script>
 </head>
 <body id="page-top">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="~/template/assets/img/navbar-logo.svg" alt="..." /></a>
+            <a class="navbar-brand" href="#page-top"><img class="logo" src="~/template/assets/img/navbar-logo.svg" alt="..." /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars ms-1"></i>
@@ -36,17 +127,17 @@
         </div>
     </nav>
     <!-- Masthead-->
-   
-
-    @RenderBody()
-    <div class="masthead" style= "display: flex;
-    justify-content: center;">
+    <header class="masthead">
         <div class="container">
             <div class="masthead-subheading">Welcome To Emir Bazaar</div>
             <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
             <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
         </div>
-    </div>
+    </header>
+   
+    @RenderBody()
+
+
     <footer class="footer py-4">
         <div class="container">
             <div class="row align-items-center">
@@ -62,21 +153,20 @@
                 </div>
             </div>
         </div>
-
-
-
+     
+   
+            
 
     </footer>
     <!-- Bootstrap core JS-->
     <script src="~/template/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="~/template/js/scripts.js"></script>
     <!-- Core theme JS-->
-    <script src="~/js/scripts.js"></script>
-
-
-    <script src="~/template/bootstrap/sb-forms-0.4.1.js"></script>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/template/js/scripts.js"></script>
+@*     <script src="~/template/bootstrap/sb-forms-0.4.1.js"></script> *@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 </body>
 </html>
+
+

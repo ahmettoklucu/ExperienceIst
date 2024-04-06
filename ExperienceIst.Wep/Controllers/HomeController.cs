@@ -17,8 +17,9 @@ namespace ExperienceIst.Wep.Controllers
         {
             return View();
         }
+        [HttpPost]
         [AllowAnonymous]
-        public  JsonResult MakeRequest(Request model)
+        public async  Task<IActionResult> MakeRequest(Request model)
         {
 
             var addedRequest =  _requestService.AddRequest(model);
