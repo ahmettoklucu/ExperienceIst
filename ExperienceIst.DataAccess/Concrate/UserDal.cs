@@ -11,12 +11,17 @@ namespace ExperienceIst.DataAccess.Concrate
 {
     public class UserDal : IUserDal
     {
+        private readonly ExperienceIstContext _context;
+
+        public UserDal(ExperienceIstContext context)
+        {
+            _context = context;
+        }
         public User Get(Expression<Func<User, bool>> filter)
         {
-            using (ExperienceIstContext context = new ExperienceIstContext())
-            {
-                return context.Set<User>().SingleOrDefault(filter);
-            }
+
+                return _context.Set<User>().SingleOrDefault(filter);
+            
         }
     }
 }

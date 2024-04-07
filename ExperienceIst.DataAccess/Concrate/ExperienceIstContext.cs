@@ -1,21 +1,29 @@
 ﻿using ExperienceIst.Entities.Concrate;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+
+using Microsoft.EntityFrameworkCore;
 
 namespace ExperienceIst.DataAccess.Concrate
 {
-    public class ExperienceIstContext:DbContext
+    public class ExperienceIstContext : DbContext
     {
-        public ExperienceIstContext() //: base("Name=AsascContext")
+        public ExperienceIstContext(DbContextOptions<ExperienceIstContext> options) : base(options)
         {
-            Database.SetInitializer<ExperienceIstContext>(null);
         }
         public DbSet<Request> Requests { get; set; }
         public DbSet<User> Users { get; set; }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                // Veritabanı bağlantı dizesi ve diğer ayarlar burada yapılır
+                optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;initial catalog=ExperienceIst;integrated security=SSPI", options =>
+                {
+                    options.UseRelationalNulls();
+                    options.MigrationsHistoryTable("__EFMigrationsHistory");
+                    options.EnableRetryOnFailure();
+                    options.CommandTimeout((int)TimeSpan.FromMinutes(3).TotalSeconds);
+                });
+            }
+        }
     }
 }

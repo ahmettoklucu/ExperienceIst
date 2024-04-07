@@ -19,18 +19,25 @@ namespace ExperienceIst.Wep.Controllers
         }
         [HttpPost]
         [AllowAnonymous]
-        public async  Task<IActionResult> MakeRequest(Request model)
+        public  IActionResult MakeRequest([FromBody] Request model)
         {
-
-            var addedRequest =  _requestService.AddRequest(model);
-            if (addedRequest.Success == true)
+            try
             {
-                return Json(addedRequest.Message);  
+                var addedRequest = _requestService.AddRequest(model);
+                if (addedRequest.Success == true)
+                {
+                    return Json(addedRequest.Message);
+                }
+                else
+                {
+                    return Json(addedRequest.Message);
+                }
             }
-            else
+            catch(Exception ex)
             {
-                return Json(addedRequest.Message);
+                return Json(ex.Message);  
             }
+           
 
         }
         

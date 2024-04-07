@@ -25,7 +25,7 @@ namespace ExperienceIst.Bussiness.Concrate.FluentValidation
         private bool NumericControl(string arg)
         {
             bool result = false;
-            Regex numericControl = new Regex("^(?=.*?[0-9]).{11,}$");
+            Regex numericControl = new Regex("^(?=.*?[0-9]).{10,}$");
             if (numericControl.IsMatch(arg) == true)
             {
                 result = true;
